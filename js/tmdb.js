@@ -11,17 +11,24 @@ function getListMovie(){
     // Object/array JavaScript dari response.json() masuk lewat data.
     // Menyusun komponen card movie secara dinamis
     var moviesHTML = "";
-    data.resutls.forEach(function(movie) {
+    data.results.forEach(function(movie) {
       moviesHTML += `
         <div class="col m3 s6">
            <div class="card">
               <a href="./movie.html?id=$(movie.id)">
                 <div class="card-image waves-effect waves-block waves-light">
-                  <img src="https://image.tmdb.org/t/p/w500$ (movie.poster_path)" />
+                  <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" />
                 </div>
-                
+              </a>
+              <div class="card-content text-center">
+                 <strong>${movie.title}</strong>
+              </div>
+           </div>
+        </div>
+        `;
+    )};
 
-    )}
-
-  }
+    document.getElementById("movie_list").innerHTML = moviesHTML;
+  })
+  .catch(error);
 }
