@@ -40,11 +40,12 @@ function getListMovie(services, sectiontitle) {
 //      var moviesHTML = "";
 //      data.results.forEach(function(movie) {
 //        moviesHTML += `
-//        <div class="col">
+//        <div class="col m3 s6">
 //        <a href=".movie.html?=${movie.id}">
 //        <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" />
-//      </a>
 //   </div>
+//      </a>
+//    <div class="card-content text-center">
 //      <strong>${movie.title}</strong>
 //  </div>
 //  `;
@@ -53,7 +54,7 @@ function getListMovie(services, sectiontitle) {
       document.getElementById("movie_list").innerHTML = moviesHTML;
       document.getElementById("section_title").innerHTML = sectiontitle;
       document.getElementById("movie_id").innerHTML = moviesHTML;
-      // document.getElementById("release_dates").innerHTML = releasedates;
+      document.getElementById("release_dates").innerHTML = releasedates;
 
   })
   .catch(error);
